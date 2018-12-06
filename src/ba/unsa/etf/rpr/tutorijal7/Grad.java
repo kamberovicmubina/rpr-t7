@@ -9,6 +9,11 @@ public class Grad {
         brojStanovnika = 0;
         temperature = new double[1000];
     }
+    public Grad (String ime, int brSt, double[] temp) {
+        naziv = ime;
+        brojStanovnika = brSt;
+        temperature = temp;
+    }
     public String dajNaziv () {
         return naziv;
     }

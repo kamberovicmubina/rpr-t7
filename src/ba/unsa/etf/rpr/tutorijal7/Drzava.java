@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.tutorijal7;
 
-public class Drzava {
+import java.io.Serializable;
+
+public class Drzava implements Serializable {
     private String naziv;
     private int brojStanovnika;
     private double povrsina;
@@ -13,19 +15,19 @@ public class Drzava {
         povrsina = 0;
         jedinicaZaPovrsinu = "";
     }
-    public String dajNaziv () const {
+    public String dajNaziv ()  {
         return naziv;
     }
-    public int dajBrojStanovnika () const {
+    public int dajBrojStanovnika ()  {
         return brojStanovnika;
     }
-    public double dajPovrsinu () const {
+    public double dajPovrsinu ()  {
         return povrsina;
     }
-    public String dajJedinicuZaPovrsinu () const {
+    public String dajJedinicuZaPovrsinu ()  {
         return jedinicaZaPovrsinu;
     }
-    public Grad dajGlavniGrad () const {
+    public Grad dajGlavniGrad ()  {
         return glavniGrad;
     }
 }
