@@ -13,19 +13,34 @@ public class Drzava {
         povrsina = 0;
         jedinicaZaPovrsinu = "";
     }
-    public String dajNaziv () const {
+    public String dajNaziv ()  {
         return naziv;
     }
-    public int dajBrojStanovnika () const {
+    public int dajBrojStanovnika ()  {
         return brojStanovnika;
     }
-    public double dajPovrsinu () const {
+    public double dajPovrsinu ()  {
         return povrsina;
     }
-    public String dajJedinicuZaPovrsinu () const {
+    public String dajJedinicuZaPovrsinu ()  {
         return jedinicaZaPovrsinu;
     }
-    public Grad dajGlavniGrad () const {
+    public Grad dajGlavniGrad ()  {
         return glavniGrad;
+    }
+    public void setNaziv (String ime) {
+        naziv = ime;
+    }
+    public void setBrojStanovnika (int broj) {
+        brojStanovnika = broj;
+    }
+    public void setPovrsina (double p) {
+        povrsina = p;
+    }
+    public void setJedinicaZaPovrsinu (String jp) {
+        jedinicaZaPovrsinu = jp;
+    }
+    public void setGlavniGrad (Grad g) {
+        glavniGrad = g;
     }
 }
