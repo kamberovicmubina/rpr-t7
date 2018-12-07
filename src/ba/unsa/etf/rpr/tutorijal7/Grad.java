@@ -17,6 +17,11 @@ public class Grad {
         temperature = temp;
         brojTemperatura = brTemp;
     }
+    public Grad (String ime, int brSt, double[] temp) {
+        naziv = ime;
+        brojStanovnika = brSt;
+        temperature = temp;
+    }
     public String dajNaziv () {
         return naziv;
     }

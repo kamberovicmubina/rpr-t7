@@ -4,44 +4,24 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tutorijal {
     public static void main(String[] args) {
-        ArrayList<Grad> g = ucitajGradove();
 
-        for (Grad gr : g) {
-            System.out.println(gr.dajNaziv());
-            gr.ispisiTemperature();
-            System.out.println();
-        }
     }
 
-    public static ArrayList<Grad> ucitajGradove () {
-        Scanner ulaz = null;
+    public static void ucitajGradove () {
+        Scanner ulaz, izlaz;
         try {
-            ulaz = new Scanner(new FileReader("C:\\Users\\User\\IdeaProjects\\rpr-t7\\src\\ba\\unsa\\etf\\rpr\\tutorijal7\\mjerenja.txt"));
+            ulaz = new Scanner(new FileReader("mjerenja.txt"));
         } catch (FileNotFoundException e) {
             System.out.println("Datoteka mjerenja.txt ne postoji ili se ne može otvoriti");
+            return;
         }
 
-        ArrayList<Grad> izlaz = new ArrayList<>();
-        while (ulaz.hasNext()) {
-            int j = 0;
-            String[] linija = ulaz.nextLine().split(",");
-            String ime = linija[0];
-            double[] temp = new double[1000];
-            int i;
-            for (i = 0; i < linija.length - 1; i++) {
-                temp[i] = (double) Double.valueOf(linija[i+1]);
-            }
-            izlaz.add(new Grad(ime, 0, temp, i));
-        }
-        return izlaz;
-    }
-
-    public static UN ucitajXml (ArrayList<Grad> gradovi) {
-
+        /*try {
+            izlaz = new PrintWriter(new FileWriter())
+        }*/
     }
 }
