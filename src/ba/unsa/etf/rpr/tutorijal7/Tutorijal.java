@@ -6,6 +6,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,6 +22,7 @@ public class Tutorijal {
         }
 
         UN un = ucitajXml(g);
+        zapisiXml(un);
         for (int i = 0; i < un.dajDrzave().size(); i++) {
             System.out.println("Ime drzave: "+ un.dajDrzave().get(i).dajNaziv() );
             System.out.println("Broj stanovnika drzave: "+ un.dajDrzave().get(i).dajBrojStanovnika() );
@@ -31,9 +33,8 @@ public class Tutorijal {
             for (int j = 0; j < un.dajDrzave().get(i).dajGlavniGrad().dajBrojTemperatura(); j++) {
                 System.out.print(un.dajDrzave().get(i).dajGlavniGrad().dajTemperature()[j]+" ");
             }
-            System.out.println();
         }
-
+        System.out.println();
     }
 
     public static ArrayList<Grad> ucitajGradove () {
@@ -134,6 +135,16 @@ public class Tutorijal {
 
         un.setDrzave(listaDrzava);
         return un;
+    }
+
+    public static void zapisiXml (UN un) {
+        try {
+            XMLEncoder izlaz = new XMLEncoder(new FileOutputStream("un.xml"));
+            izlaz.writeObject(un);
+            izlaz.close();
+        } catch (Exception e) {
+            System.out.println("Izuzetak");
+        }
     }
 
 }
