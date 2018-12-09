@@ -31,6 +31,9 @@ public class Grad {
     public double[] dajTemperature () {
         return temperature;
     }
+    public int dajBrojTemperatura() {
+        return brojTemperatura;
+    }
     public void setNaziv (String ime) {
         naziv = ime;
     }
@@ -39,6 +42,9 @@ public class Grad {
     }
     public void setTemperature (double[] temp) {
         temperature = temp;
+    }
+    public void setBrojTemperatura (int brTemp) {
+        brojTemperatura = brTemp;
     }
     public void ispisiTemperature () {
         for (int i = 0; i < brojTemperatura; i++) {

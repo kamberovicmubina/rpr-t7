@@ -11,4 +11,7 @@ public class UN implements Serializable {
     public ArrayList<Drzava> dajDrzave () {
         return drzave;
     }
+    public void setDrzave (ArrayList<Drzava> drzave) {
+        this.drzave = drzave;
+    }
 }
